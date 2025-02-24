@@ -1,2 +1,0 @@
-namespace MyToDoApp.Data;
-

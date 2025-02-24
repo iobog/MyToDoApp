@@ -11,9 +11,9 @@ public partial class Ttask
 
     public string? Description { get; set; }
 
-    public bool? Cover { get; set; }
+    public bool? IsCompleted { get; set; }
 
-    public string? Observations { get; set; }
+    public string? Notes { get; set; }
 
     public DateTime? CreatedAt { get; set; }
 

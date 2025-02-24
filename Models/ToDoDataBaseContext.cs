@@ -25,12 +25,11 @@ public partial class ToDoDataBaseContext : DbContext
     {
         modelBuilder.Entity<Ttask>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Ttask__3213E83F8D552E6B");
+            entity.HasKey(e => e.Id).HasName("PK__Ttask__3213E83F6FB747AB");
 
             entity.ToTable("Ttask");
 
             entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.Cover).HasColumnName("cover");
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime")
@@ -42,10 +41,13 @@ public partial class ToDoDataBaseContext : DbContext
                 .HasMaxLength(250)
                 .IsUnicode(false)
                 .HasColumnName("description");
-            entity.Property(e => e.Observations)
+            entity.Property(e => e.IsCompleted)
+                .HasDefaultValue(false)
+                .HasColumnName("is_completed");
+            entity.Property(e => e.Notes)
                 .HasMaxLength(250)
                 .IsUnicode(false)
-                .HasColumnName("observations");
+                .HasColumnName("notes");
             entity.Property(e => e.Title)
                 .HasMaxLength(250)
                 .IsUnicode(false)
