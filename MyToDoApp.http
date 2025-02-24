@@ -1,0 +1,6 @@
+@MyToDoApp_HostAddress = http://localhost:5097
+
+GET {{MyToDoApp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
