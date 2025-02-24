@@ -7,9 +7,9 @@ public interface IToDoRepo
 {
    //bool SaveChanges();
 
-    Ttask GetTaskById(int id);
-    IEnumerable<Ttask> GetAllTasks();
+    TTask GetTaskById(int id);
+    IEnumerable<TTask> GetAllTasks();
 
-    void CreateTask(Ttask task);
+    void CreateTask(TTask task);
     //void UpdateTask()
 }

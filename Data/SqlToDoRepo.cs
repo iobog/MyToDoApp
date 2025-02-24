@@ -5,25 +5,27 @@ namespace MyToDoApp.Data;
 
 public class SqlToDoRepo : IToDoRepo
 {
-    private readonly ApplicationDbContext _context;
+    private readonly AppDbContext _context;
 
-    public SqlToDoRepo(ApplicationDbContext context)
+    public SqlToDoRepo(AppDbContext context)
     {
         _context = context;
     }
 
 
-    public void CreateTask(Ttask task)
+    public void CreateTask(TTask task)
     {
         throw new NotImplementedException();
     }
 
-    public IEnumerable<Ttask> GetAllTasks() =>
-        //return _context.Ttasks.ToList();
-        [.. _context.Tasks];
+    public IEnumerable<TTask> GetAllTasks() {
+        return _context.TTasks.ToList();
+        //return [.. _context.Tasks];
+    }
 
-    public Ttask GetTaskById(int id) =>
-        _context.Tasks.FirstOrDefault(p => p.Id == id);
-    
+    public TTask GetTaskById(int id) {
+        return _context.TTasks.FirstOrDefault(p => p.Id == id);
+    }
+
 
 }

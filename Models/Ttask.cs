@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MyToDoApp.Models;
 
-public partial class Ttask
+public partial class TTask
 {
     public int Id { get; set; }
 
