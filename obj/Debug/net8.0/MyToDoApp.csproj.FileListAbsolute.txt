@@ -168,3 +168,5 @@
 /Users/ioan/dev/MyToDoApp/obj/Debug/net8.0/MyToDoApp.pdb
 /Users/ioan/dev/MyToDoApp/obj/Debug/net8.0/MyToDoApp.genruntimeconfig.cache
 /Users/ioan/dev/MyToDoApp/obj/Debug/net8.0/ref/MyToDoApp.dll
+/Users/ioan/dev/MyToDoApp/bin/Debug/net8.0/AutoMapper.dll
+/Users/ioan/dev/MyToDoApp/bin/Debug/net8.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll

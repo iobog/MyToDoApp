@@ -5,7 +5,7 @@ namespace MyToDoApp.Data;
 
 public interface IToDoRepo
 {
-   //bool SaveChanges();
+   bool SaveChanges();
 
     TTask GetTaskById(int id);
     IEnumerable<TTask> GetAllTasks();
