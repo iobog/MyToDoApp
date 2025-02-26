@@ -11,5 +11,6 @@ public class TaskProfile :Profile
     {  // source --> target
        CreateMap<TTask,TaskReadDto>();
        CreateMap<TaskCreateDto,TTask>();
+       CreateMap<TaskUpdateDto,TTask>();
     }
 }

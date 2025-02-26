@@ -94,5 +94,37 @@ public class ToDoController : ControllerBase
   // }
 
 
+  [HttpPut("{id}")]
+  public async Task<ActionResult> UpdateTaskAsync(int id, TaskUpdateDto taskUpdateDto)
+  {
+    
+    //var taskModelFromRepo = _db.F(id);
+    try
+    {
+      var task = await _db.TTasks
+        .Where(_ => _.Id == id)
+        .FirstOrDefaultAsync();
+
+      if(task == null) 
+      {
+        return NotFound();
+      }
+
+      _mapper.Map(taskUpdateDto,task);
+
+      _db.Update(task);
+
+      await _db.SaveChangesAsync();
+
+      return NoContent();
+
+    }
+    catch(Exception e)
+    {
+      return StatusCode(StatusCodes.Status500InternalServerError,e.Message);
+    }
+
+  }
+
 
 }

@@ -5,11 +5,12 @@ namespace MyToDoApp.Data;
 
 public interface IToDoRepo
 {
-   bool SaveChanges();
+    bool SaveChanges();
 
     TTask GetTaskById(int id);
     IEnumerable<TTask> GetAllTasks();
 
     void CreateTask(TTask task);
-    //void UpdateTask()
+    void UpdateTask(TTask task);
+
 }

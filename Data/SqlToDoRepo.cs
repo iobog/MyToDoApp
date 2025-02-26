@@ -38,4 +38,9 @@ public class SqlToDoRepo : IToDoRepo
         return (_context.SaveChanges()>= 0 );
 
     }
+
+    public void UpdateTask(TTask task)
+    {
+        //Nothing
+    }
 }
