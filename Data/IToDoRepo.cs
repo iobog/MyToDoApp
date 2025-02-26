@@ -12,5 +12,6 @@ public interface IToDoRepo
 
     void CreateTask(TTask task);
     void UpdateTask(TTask task);
+    void DeleteTask(TTask task);
 
 }

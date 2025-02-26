@@ -43,4 +43,14 @@ public class SqlToDoRepo : IToDoRepo
     {
         //Nothing
     }
+
+    public void DeleteTask(TTask task)
+    {
+        if(task == null)
+        {
+            throw new ArgumentNullException(nameof(task));
+        }
+        _context.TTasks.Remove(task);
+
+    }
 }

@@ -1,5 +1,7 @@
 using System.Threading.Tasks;
 using AutoMapper;
+using Azure;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
@@ -126,5 +128,59 @@ public class ToDoController : ControllerBase
 
   }
 
+
+  //PATCH api/commands/{id}
+  [HttpPatch("{id}")]
+  public async Task<ActionResult> PartialTaskUpdateAsync(int id,JsonPatchDocument<TaskUpdateDto> patchDoc)
+  {
+    try
+    {
+      var taskModelFromDb = await _db.TTasks
+        .Where(_ => _.Id == id)
+        .FirstOrDefaultAsync();
+
+      if(taskModelFromDb == null) 
+      {
+        return NotFound();
+      }
+
+      var taskToPatch = _mapper.Map<TaskUpdateDto>(taskModelFromDb);
+      patchDoc.ApplyTo(taskToPatch,ModelState);
+
+      if(!TryValidateModel(taskToPatch))
+      {
+        return ValidationProblem(ModelState);
+      }
+
+      _mapper.Map(taskToPatch,taskModelFromDb);
+      _db.Update(taskModelFromDb);
+      await _db.SaveChangesAsync();
+
+      return NoContent();
+    }
+    catch(Exception e)
+    {
+      return StatusCode(StatusCodes.Status500InternalServerError,e.Message);
+    }
+  }
+
+
+  [HttpDelete("{id}")]
+  public async Task<ActionResult> DeleteTaskAsync(int id)
+  {
+    var taskModelFromDb = await _db.TTasks
+      .Where(_ => _.Id == id)
+      .FirstOrDefaultAsync();
+
+    if(taskModelFromDb == null) 
+    {
+      return NotFound();
+    }
+    _db.Remove(taskModelFromDb);
+    await _db.SaveChangesAsync();
+
+    return NoContent();
+
+  }
 
 }

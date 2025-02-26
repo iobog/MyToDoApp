@@ -8,9 +8,11 @@ namespace MyToDoApp.Profiles;
 public class TaskProfile :Profile
 {
     public TaskProfile()
-    {  // source --> target
+    {  
+       // source --> target
        CreateMap<TTask,TaskReadDto>();
        CreateMap<TaskCreateDto,TTask>();
        CreateMap<TaskUpdateDto,TTask>();
+       CreateMap<TTask,TaskUpdateDto>();
     }
 }
