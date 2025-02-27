@@ -18,4 +18,6 @@ public partial class TTask
     public DateTime? CreatedAt { get; set; }
 
     public DateTime? DeletedAt { get; set; }
+
+    public virtual ICollection<TTaskTag> TTaskTags { get; set; } = new List<TTaskTag>();
 }
