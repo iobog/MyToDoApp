@@ -1,7 +1,5 @@
 /Users/ioan/dev/MyToDoApp/bin/Debug/net8.0/appsettings.Development.json
 /Users/ioan/dev/MyToDoApp/bin/Debug/net8.0/appsettings.json
-/Users/ioan/dev/MyToDoApp/bin/Debug/net8.0/ClientApp/obj/ClientApp.csproj.nuget.dgspec.json
-/Users/ioan/dev/MyToDoApp/bin/Debug/net8.0/ClientApp/obj/project.assets.json
 /Users/ioan/dev/MyToDoApp/bin/Debug/net8.0/MyToDoApp
 /Users/ioan/dev/MyToDoApp/bin/Debug/net8.0/MyToDoApp.deps.json
 /Users/ioan/dev/MyToDoApp/bin/Debug/net8.0/MyToDoApp.runtimeconfig.json
@@ -176,5 +174,3 @@
 /Users/ioan/dev/MyToDoApp/obj/Debug/net8.0/MyToDoApp.pdb
 /Users/ioan/dev/MyToDoApp/obj/Debug/net8.0/MyToDoApp.genruntimeconfig.cache
 /Users/ioan/dev/MyToDoApp/obj/Debug/net8.0/ref/MyToDoApp.dll
-/Users/ioan/dev/MyToDoApp/bin/Debug/net8.0/ClientApp/bin/Debug/net8.0/ClientApp.deps.json
-/Users/ioan/dev/MyToDoApp/bin/Debug/net8.0/ClientApp/obj/Debug/net8.0/ClientApp.sourcelink.json
