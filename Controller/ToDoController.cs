@@ -20,8 +20,7 @@ public class ToDoController : ControllerBase
   private readonly AppDbContext _db;
   private readonly IMapper _mapper;
 
-  public ToDoController(IToDoRepo toDoRepo,
-    AppDbContext db, IMapper mapper)
+  public ToDoController(IToDoRepo toDoRepo, AppDbContext db, IMapper mapper)
   {
     _repository = toDoRepo;
     _db = db;

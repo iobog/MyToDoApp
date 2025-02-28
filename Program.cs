@@ -19,6 +19,7 @@ builder.Services.AddControllers().AddNewtonsoftJson(s=>{
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IToDoRepo, SqlToDoRepo>();
 
+
 var app = builder.Build();
 
 
