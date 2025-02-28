@@ -1,4 +1,4 @@
-namespace MyToDoApp.Dtos;
+namespace MyToDoApp.Dtos.TagDto;
 
 
 public class TagReadDto

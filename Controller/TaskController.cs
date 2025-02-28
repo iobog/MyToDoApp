@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using MyToDoApp.Data;
-using MyToDoApp.Dtos;
+using MyToDoApp.Dtos.TaskDtos;
 using MyToDoApp.Models;
 
 namespace MyToDoApp.Controller;
@@ -74,27 +74,6 @@ public class ToDoController : ControllerBase
       return StatusCode(StatusCodes.Status500InternalServerError,e.Message);
     }
   }
-  // [HttpPost]
-  // public ActionResult<TaskReadDto> CreateTask(TaskCreateDto taskCreateDto)
-  // {
-  //   try
-  //   {
-  //     var taskModel = _mapper.Map<TTask>(taskCreateDto);
-  //     //await _db.AddAsync(taskModel);
-  //     //await _db.SaveChangesAsync();
-  //     _repository.CreateTask(taskModel);
-  //     _repository.SaveChanges();
-
-  //     return Ok(_mapper.Map<TaskReadDto>(taskModel));
-
-  //   }
-  //   catch (Exception e)
-  //   {
-  //     return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
-  //   }
-  // }
-
-
   [HttpPut("{id}")]
   public async Task<ActionResult> UpdateTaskAsync(int id, TaskUpdateDto taskUpdateDto)
   {

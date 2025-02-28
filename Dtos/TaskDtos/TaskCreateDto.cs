@@ -1,21 +1,16 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace MyToDoApp.Dtos;
+namespace MyToDoApp.Dtos.TaskDtos;
 
 
-public partial class TaskUpdateDto
+public partial class TaskCreateDto
 {
-
-    [Required ]
+    [Required]
     public string Title { get; set; } = null!;
 
     public string? Description { get; set; }
-
-    public bool? IsCompleted { get; set; }
-
+    
     public string? Notes { get; set; }
-
-    public DateTime? DeletedAt { get; set; }
 
 
 }

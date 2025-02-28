@@ -1,5 +1,5 @@
 using AutoMapper;
-using MyToDoApp.Dtos;
+using MyToDoApp.Dtos.TaskDtos;
 using MyToDoApp.Models;
 
 namespace MyToDoApp.Profiles;
@@ -14,5 +14,8 @@ public class TaskProfile :Profile
        CreateMap<TaskCreateDto,TTask>();
        CreateMap<TaskUpdateDto,TTask>();
        CreateMap<TTask,TaskUpdateDto>();
+
+
+
     }
 }

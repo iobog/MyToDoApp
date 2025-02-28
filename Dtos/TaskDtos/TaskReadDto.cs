@@ -1,5 +1,4 @@
-namespace MyToDoApp.Dtos;
-
+namespace MyToDoApp.Dtos.TaskDtos;
 
 public class TaskReadDto
 {
