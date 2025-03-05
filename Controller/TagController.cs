@@ -135,6 +135,8 @@ public class TagController:ControllerBase
   [HttpDelete("{id}")]
   public async Task<ActionResult> DeleteTagAsync(int id)
   {
+    TTag tag1 = new();
+
     var tag = await _db.TTags
       .Where(_ => _.Id == id)
       .FirstOrDefaultAsync();

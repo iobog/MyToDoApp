@@ -13,6 +13,7 @@ public partial class AppDbContext : DbContext
 
     public virtual DbSet<TTag> TTags { get; set; }
 
+
     public virtual DbSet<TTask> TTasks { get; set; }
 
     public virtual DbSet<TTaskTag> TTaskTags { get; set; }
