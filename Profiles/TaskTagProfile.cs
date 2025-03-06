@@ -28,6 +28,18 @@ public class TaskTagProfile : Profile
     // CreateMap<TaskTagCreateDto,TTag>();
     // CreateMap<TaskTagUpdateDto,TTag>();
     // CreateMap<TTag,TaskTagUpdateDto>();
+
+    CreateMap<TTaskTag, TaskTagReadDto>()
+      .ForMember(dest => dest.Title, opt => opt.MapFrom(src => src.Task.Title))
+      .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Task.Description))
+      .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.Task.CreatedAt))
+      .ForMember(dest => dest.TagName, opt => opt.MapFrom(src => src.Tag.Name));
+    
+
+    
+
+
+
   }
 
 }

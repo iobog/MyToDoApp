@@ -23,11 +23,36 @@ public class AppController: ControllerBase
   }
 
 
-  // [HttpGet]
-  // public async Task<ActionResult<IEnumerable<TaskTagReadDto>>> GetAllTaskTags()
-  // {
-  //   return Ok(_mapper.Map<IEnumerable<TaskTagReadDto>>(await _db.TTaskTags.ToListAsync()));
-  // }
+  [HttpGet]
+  public async Task<ActionResult<IEnumerable<TaskTagReadDto>>> GetTaskTags()
+  {
+    var taskTags = await _db.TTaskTags
+      .Include(tt => tt.Task)
+      .Include(tt => tt.Tag)
+      .ToListAsync();
+
+    return Ok(_mapper.Map<IEnumerable<TaskTagReadDto>>(taskTags));
+  }
+
+
+  [HttpGet("{id}",Name = "GetTaskTagById")]
+  public async Task<ActionResult<TaskTagReadDto>>GetTaskTagById(int id)
+  {
+    var taskTag = await _db.TTaskTags.Where(_ => _.Id == id)
+    .Include(tt => tt.Task)
+    .Include(tt => tt.Tag)
+    .FirstOrDefaultAsync();
+
+    if(taskTag == null)
+    {
+      return NotFound();
+    }
+
+    return Ok(_mapper.Map<TaskTagReadDto>(taskTag));
+  }
+
+  [HttpPost]
+  public async Task<ActionResult<>>
 
 
 
